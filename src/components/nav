@@ -1,0 +1,226 @@
+// "use client";
+// import { useState, useEffect, useRef } from "react";
+// import { motion, AnimatePresence } from "framer-motion";
+// import { gsap } from "gsap";
+// import Link from "next/link";
+// import { Menu, X, ChevronDown, ArrowRight } from "lucide-react";
+
+// const Navbar = () => {
+//   const [isOpen, setIsOpen] = useState(false);
+//   const [showServices, setShowServices] = useState(false);
+//   const [isMobileServicesOpen, setIsMobileServicesOpen] = useState(false);
+//   const mobileMenuRef = useRef(null);
+//   const servicesRef = useRef(null);
+
+//   // GSAP Animation for Mobile Menu
+//   useEffect(() => {
+//     if (isOpen) {
+//       gsap.fromTo(
+//         mobileMenuRef.current,
+//         { x: "-100%" },
+//         {
+//           x: "0%", 
+//           duration: 0.5,
+//           ease: "cubic-bezier(0.25, 0.1, 0.25, 1)",
+//         }
+//       );
+//     }
+//   }, [isOpen]);
+
+//   // Close Services Modal on outside click
+//   useEffect(() => {
+//     const handleClickOutside = (event: MouseEvent) => {
+//       if (
+//         servicesRef.current &&
+//         !(servicesRef.current as HTMLElement).contains(event.target as Node)
+//       ) {
+//         setShowServices(false);
+//       }
+//     };
+//     document.addEventListener("mousedown", handleClickOutside);
+//     return () => document.removeEventListener("mousedown", handleClickOutside);
+//   }, []);
+
+//   return (
+//     <motion.nav
+//       initial={{ y: -100, opacity: 0 }}
+//       animate={{ y: 0, opacity: 1 }}
+//       transition={{ duration: 0.6, ease: "easeOut" }}
+//       className="fixed top-0 left-0 w-full bg-black text-white px-6 md:px-20 py-4 flex items-center justify-between z-50 shadow-md"
+//     >
+//       {/* Logo */}
+//       <Link href="/" className="text-xl font-semibold">
+//         🍒 <span className="font-bold">Cherry.design</span>
+//       </Link>
+
+//       {/* Mobile Menu Button */}
+//       <div className="md:hidden">
+//         <button onClick={() => setIsOpen(!isOpen)}>
+//           <Menu className="w-6 h-6" />
+//         </button>
+//       </div>
+
+//       {/* Desktop Menu */}
+//       <ul className="hidden md:flex space-x-10 text-lg font-medium items-center">
+//         <li>
+//           <Link href="/projects" className="hover:text-gray-400 transition">
+//             Works
+//           </Link>
+//         </li>
+//         {/* Services Dropdown */}
+//         <li
+//           className="relative cursor-pointer hover:text-gray-400 transition"
+//           onMouseEnter={() => setShowServices(true)}
+//           onMouseLeave={() => setShowServices(false)}
+//         >
+//           Services
+//           <AnimatePresence>
+//             {showServices && (
+//               <motion.div
+//                 ref={servicesRef}
+//                 initial={{ opacity: 0, y: -20 }}
+//                 animate={{ opacity: 1, y: 0 }}
+//                 exit={{ opacity: 0, y: -20 }}
+//                 transition={{ duration: 0.3, ease: "easeInOut" }}
+//                 className="absolute left-0 mt-4 w-[400px] bg-black text-white p-5 rounded-lg shadow-lg border border-gray-700"
+//               >
+//                 <h3 className="text-sm text-gray-400 mb-3">Our Services</h3>
+//                 <ul className="space-y-2">
+//                   <li className="hover:text-gray-400 transition">
+//                     <Link href="/web-design">Web Design</Link>
+//                   </li>
+//                   <li className="hover:text-gray-400 transition">
+//                     <Link href="/webflow-development">Webflow Development</Link>
+//                   </li>
+//                   <li className="hover:text-gray-400 transition">
+//                     <Link href="/migration">Migration</Link>
+//                   </li>
+//                   <li className="hover:text-gray-400 transition">
+//                     <Link href="/support-growth">Support & Growth</Link>
+//                   </li>
+//                 </ul>
+//               </motion.div>
+//             )}
+//           </AnimatePresence>
+//         </li>
+
+//         <li>
+//           <Link href="/about" className="hover:text-gray-400 transition">
+//             About
+//           </Link>
+//         </li>
+//         <li>
+//           <Link href="/blog" className="hover:text-gray-400 transition">
+//           Blogs
+//           </Link>
+//         </li>
+//       <motion.div
+//       initial={{ opacity: 0, y: -3 }}
+//       animate={{ opacity: 1, y: 0 }}
+//       transition={{ duration: 0.8, ease: "easeOut" }}
+//     >
+//       <Link href="/contact">
+//         <motion.button
+         
+//           transition={{ type: "spring", stiffness: 200, damping: 12 }}
+//           className="hidden md:flex items-center   px-5 py-2  text-lg font-medium transition-all duration-300"
+//         >
+//           Start a Project
+//           <motion.span
+//             whileHover={{ x: 10 }} // Move the arrow slightly on hover
+//             transition={{ type: "spring", stiffness: 150, damping: 10 }}
+//             className="ml-3 w-6 h-6 bg-[#c1141d] text-white flex items-center justify-center rounded-full"
+//           >
+//             <ArrowRight size={18} />
+//           </motion.span>
+//         </motion.button>
+//       </Link>
+//     </motion.div>
+//       </ul>
+
+//       {/* Start a Project Button */}
+
+//       {/* Mobile Dropdown Menu */}
+//       <AnimatePresence>
+//         {isOpen && (
+//           <motion.div
+//             ref={mobileMenuRef}
+//             initial={{ x: "-100%" }}
+//             animate={{ x: "0%" }}
+//             exit={{ x: "-100%" }}
+//             transition={{ duration: 0.5, ease: [0.25, 0.1, 0.25, 1] }} 
+//             className="fixed top-0 left-0 h-full w-full bg-black text-white flex flex-col p-6 shadow-lg"
+//           >
+//             <button
+//               className="absolute top-5 right-5 text-gray-400 hover:text-white"
+//               onClick={() => setIsOpen(false)}
+//             >
+//               <X size={24} />
+//             </button>
+
+//             <ul className="space-y-6 mt-10 text-lg font-medium">
+//               <li>
+//                 <Link href="/projects" className="hover:text-gray-400 transition">
+//                   Works
+//                 </Link>
+//               </li>
+//               {/* Mobile Services Accordion */}
+//               <li>
+//                 <div
+//                   className="flex justify-between items-center cursor-pointer hover:text-gray-400 transition"
+//                   onClick={() => setIsMobileServicesOpen(!isMobileServicesOpen)}
+//                 >
+//                   Services
+//                   <ChevronDown
+//                     className={`w-5 h-5 transition-transform ${
+//                       isMobileServicesOpen ? "rotate-180" : ""
+//                     }`}
+//                   />
+//                 </div>
+//                 <AnimatePresence>
+//                   {isMobileServicesOpen && (
+//                     <motion.ul
+//                       initial={{ height: 0, opacity: 0 }}
+//                       animate={{ height: "auto", opacity: 1 }}
+//                       exit={{ height: 0, opacity: 0 }}
+//                       className="pl-4 mt-2 space-y-2 text-gray-400"
+//                     >
+//                       <li>
+//                         <Link href="/web-design">Web Design</Link>
+//                       </li>
+//                       <li>
+//                         <Link href="/webflow-development">
+//                           Webflow Development
+//                         </Link>
+//                       </li>
+//                       <li>
+//                         <Link href="/migration">Migration</Link>
+//                       </li>
+//                       <li>
+//                         <Link href="/support-growth">Support & Growth</Link>
+//                       </li>
+//                     </motion.ul>
+//                   )}
+//                 </AnimatePresence>
+//               </li>
+
+//               <li>
+//                 <Link href="/about" className="hover:text-gray-400 transition">
+//                   About
+//                 </Link>
+//               </li>
+//               <li>
+//                 <Link href="/careers" className="hover:text-gray-400 transition">
+//                   Careers
+//                 </Link>
+//               </li>
+
+//             </ul>
+//           </motion.div>
+//         )}
+//       </AnimatePresence>
+//     </motion.nav>
+//   );
+// };
+
+// export default Navbar;
