@@ -1,12 +1,14 @@
 // pages/services/index.tsx
 import HeroSection from "@/components/HeroSection";
-import Services from "@/components/Services";
+// import Services from "@/components/Services";
 import ClientsSection from "@/components/ClientsSection";
 import StatsSection from "@/components/StatsSection";
 import PartnerSection from "@/components/PartnerSection";
 import Head from "next/head";
 import Navbar from "@/components/Navbar";
 import ContactSection from "@/components/ContactSection";
+import Testimonial from "@/components/service/Testimonial";
+import Services from "@/components/service/Services";
 
 const ServicesPage = () => {
   return (
@@ -22,6 +24,7 @@ const ServicesPage = () => {
         <ClientsSection />
         <StatsSection />
         <PartnerSection />
+        <Testimonial />
         <ContactSection/>
       </div>
     </>

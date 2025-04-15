@@ -5,14 +5,13 @@ import { motion, AnimatePresence } from "framer-motion";
 import { gsap } from "gsap";
 import Link from "next/link";
 import { Menu, X, ArrowRight } from "lucide-react";
-import { navLinks, startProjectLink } from "../data/LinksData"; // Adjust the path if necessary
+import { navLinks, startProjectLink } from "../data/LinksData"; 
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
   const mobileMenuRef = useRef(null);
-  const router = useRouter(); // Initialize useRouter
+  const router = useRouter(); 
 
-  // GSAP Animation for Mobile Menu
   useEffect(() => {
     if (isOpen) {
       gsap.fromTo(
@@ -67,25 +66,21 @@ const Navbar = () => {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, ease: "easeOut" }}
         >
-          <Link href={startProjectLink.href}>
-            <motion.button
-              transition={{ type: "spring", stiffness: 200, damping: 12 }}
-              className={`relative inline-block  md:flex items-center px-5 py-2 text-lg font-medium transition-all duration-300 ${
-                router.pathname === startProjectLink.href
-                  ? "text-[#c1141d] font-bold before:absolute before:-inset-1 before:block before:-skew-y-3 before:bg-[#F8E9E1]"
-                  : ""
-              }`}
-            >
-              <span className="relative">{startProjectLink.label}</span>
-              <motion.span
-                whileHover={{ x: 10 }}
-                transition={{ type: "spring", stiffness: 150, damping: 10 }}
-                className="ml-3 w-6 h-6 bg-[#c1141d] text-white flex items-center justify-center rounded-full"
-              >
-                <ArrowRight size={18} />
-              </motion.span>
-            </motion.button>
-          </Link>
+         <Link href={startProjectLink.href}>
+  <motion.button
+    transition={{ type: "spring", stiffness: 200, damping: 12 }}
+    className="relative inline-block md:flex items-center px-5 py-2 text-lg font-medium text-white hover:text-gray-400 transition-all duration-300"
+  >
+    <span className="relative">{startProjectLink.label}</span>
+    <motion.span
+      whileHover={{ x: 10 }}
+      transition={{ type: "spring", stiffness: 150, damping: 10 }}
+      className="ml-3 w-6 h-6 bg-[#c1141d] text-white flex items-center justify-center rounded-full"
+    >
+      <ArrowRight size={18} />
+    </motion.span>
+  </motion.button>
+</Link>
         </motion.div>
       </ul>
 

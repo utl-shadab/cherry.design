@@ -1,7 +1,7 @@
 import { Metadata } from "next";
 import Hero from "@/components/Hero";
 import Navbar from "@/components/Navbar";
-import Work from "@/components/Work";
+// import Work from "@/components/Work";
 import WhatWeDo from "@/components/WhatWeDo";
 import About from "@/components/About";
 import Testimonial from "@/components/Testimonial";
@@ -10,6 +10,7 @@ import ConsultationSection from "@/components/ConsultationSection";
 import ContactSection from "@/components/ContactSection";
 import WorkDetailsWithScrollZoom from "@/components/WorkDetailsWithScrollZoom";
 import Services from "@/components/Services";
+import WorkShowcase from "@/components/WorkShowcase";
 export const metadata: Metadata = {
   title: "Cherry.design - Home",
   description: "Welcome to Cherry.design - We design. We develop.",
@@ -20,7 +21,7 @@ export default function Home() {
     <div className="font-poppins ">
       <Navbar />
       <Hero />
-      <Work />
+     <WorkShowcase />
       <Services/>
       <WhatWeDo />
       <About />
