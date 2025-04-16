@@ -3,6 +3,7 @@
 import { useEffect, useRef } from "react";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
+import Image from "next/image";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -57,7 +58,7 @@ const OurWorkSection = () => {
               }}
               className="relative"
             >
-              <img
+              <Image
                 src={project.image}
                 alt={project.title}
                 className="w-full h-64 object-cover rounded-lg"

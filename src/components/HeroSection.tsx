@@ -6,6 +6,7 @@ import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { Play } from "lucide-react";
 import { heroData, HeroData } from "@/data/ServiceData";
 import StoryModal from "./StoryModal";
+import Image from "next/image";
 
 // Register GSAP plugins
 gsap.registerPlugin(ScrollTrigger);
@@ -141,7 +142,7 @@ const HeroSection = () => {
 
         {/* Spinning Image */}
         <div className="relative lg:w-1/2 flex justify-center lg:justify-end">
-          <img
+          <Image
             ref={imageRef}
             src="/service.png"
             alt="Spinning Image"

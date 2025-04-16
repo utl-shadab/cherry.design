@@ -1,6 +1,7 @@
 import React, { useEffect } from 'react';
 import { motion, useAnimation } from 'framer-motion';
 import { useInView } from 'react-intersection-observer';
+import Image from 'next/image';
 
 const Culture: React.FC = () => {
   // Intersection observer hooks for triggering animations
@@ -68,7 +69,7 @@ const Culture: React.FC = () => {
               
               {/* Image container */}
               <div className="w-full h-full rounded-2xl transform-gpu overflow-hidden absolute top-0 left-0 bg-gray-50 dark:bg-gray-700 lg:rounded-3xl">
-                <img 
+                <Image 
                   src="/culture.webp" 
                   alt="Team discussing work in an office with plants"
                   className="w-full h-full object-cover absolute top-0 left-0"
@@ -132,7 +133,7 @@ const Culture: React.FC = () => {
                       <div className="flex items-end space-x-2 lg:space-x-3">
                         <div className="w-9 h-9 rounded-md lg:w-12 lg:h-12 lg:rounded-lg inline-flex overflow-hidden relative">
                           <div className="relative overflow-hidden w-full h-full">
-                            <img 
+                            <Image 
                               src="/culture.webp" 
                               alt="Andy Golpys profile"
                               className="w-full h-full object-cover object-center absolute top-0 left-0"

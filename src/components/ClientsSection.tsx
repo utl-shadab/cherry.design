@@ -3,6 +3,7 @@ import { useEffect, useRef } from "react";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { clientLogos, Logo } from "@/data/ServiceData";
+import Image from "next/image";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -53,7 +54,7 @@ const ClientsSection = () => {
           <div className="flex w-max space-x-8" ref={marqueeRef}>
             {[...clientLogos, ...clientLogos].map((logo: Logo, index) => (
               <div key={index} className="client-logo flex items-center justify-center">
-                <img
+                <Image
                   src={logo.src}
                   alt={logo.name}
                   className="h-12 opacity-70 hover:opacity-100 transition"

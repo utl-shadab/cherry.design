@@ -3,6 +3,7 @@
 import { useEffect, useRef, useState } from "react";
 import { gsap } from "gsap";
 import { X } from "lucide-react";
+import Image from "next/image";
 
 interface Story {
   image: string;
@@ -240,7 +241,7 @@ const StoryModal: React.FC<StoryModalProps> = ({ isOpen, onClose }) => {
           onMouseLeave={() => setIsPaused(false)}
           onClick={handleTap}
         >
-          <img
+          <Image
             ref={storyImageRef}
             src={stories[currentStoryIndex].image}
             alt={stories[currentStoryIndex].title}

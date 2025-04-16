@@ -3,7 +3,6 @@ import { useEffect, useRef } from "react";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { ServiceDetails } from "@/data/ServiceDetailsData";
-import ServiceDetailsData from "@/data/ServiceDetailsData";
 import { backgroundColors } from "@/utils/backgroundColors";
 
 gsap.registerPlugin(ScrollTrigger);

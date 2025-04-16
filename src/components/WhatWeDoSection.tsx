@@ -4,7 +4,7 @@ import { gsap } from "gsap";
 import { ArrowRight } from "lucide-react";
 import { motion } from "framer-motion";
 import Link from "next/link";
-import { ServiceDetailsData, InnerService } from "@/data/ServiceDetailsData";
+import { ServiceDetailsData } from "@/data/ServiceDetailsData";
 
 const WhatWeDoSection = () => {
   const [activeTab, setActiveTab] = useState<number>(1);

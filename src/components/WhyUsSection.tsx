@@ -39,7 +39,7 @@ const WhyUsSection = () => {
   }, [whyChooseUsData]);
 
   if (!whyChooseUsData) {
-    return <p className="text-center text-gray-400">No data available for "Why Choose Us".</p>;
+    return <p className="text-center text-gray-400">No data available for Why Choose Us.</p>;
   }
 
   return (

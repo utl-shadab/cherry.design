@@ -1,6 +1,6 @@
 // ServiceData.ts
 
-import { image } from "framer-motion/client";
+// import { image } from "framer-motion/client";
 
 // Type for a single service
 export type Service = {

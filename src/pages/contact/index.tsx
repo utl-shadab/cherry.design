@@ -8,7 +8,7 @@ import ContactSection from "@/components/ContactSection";
 import { motion, AnimatePresence } from "framer-motion";
 import HeroSection from "@/components/HeroSection";
 export default function ContactPage() {
-  const [selectedServices, setSelectedServices] = useState<string[]>([]);
+  // const [selectedServices, setSelectedServices] = useState<string[]>([]);
   const [loading, setLoading] = useState(false);
   const [toastMessage, setToastMessage] = useState<string | null>(null);
   const services = [

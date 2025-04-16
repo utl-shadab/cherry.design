@@ -2,7 +2,7 @@
 import { useState, useEffect, useRef } from "react";
 import { gsap } from "gsap";
 import { Play, Pause } from "lucide-react"; 
-import { servicesData, Service } from "@/data/ServiceData";
+import { servicesData } from "@/data/ServiceData";
 
 const Services = () => {
   const [activeTab, setActiveTab] = useState<number>(1);

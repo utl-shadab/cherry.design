@@ -6,7 +6,7 @@ import Link from "next/link";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { Project } from "@/data/WorkData";
-import { ArrowUp, ArrowUpRight } from "lucide-react";
+import {  ArrowUpRight } from "lucide-react";
 import ElasticDivider from "@/components/ElasticDivider";
 
 // Register GSAP ScrollTrigger plugin

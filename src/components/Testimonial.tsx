@@ -85,7 +85,7 @@ const Testimonial: React.FC = () => {
                 <div className="text-center mb-12">
                     <h3 className="text-sm uppercase text-gray-500 tracking-wider mb-2">Testimonials</h3>
                     <h2 className="text-4xl md:text-5xl font-bold text-white">
-                        Don't take our word for it. <br /> Read about our happy clients
+                        Do not take our word for it. <br /> Read about our happy clients
                     </h2>
                 </div>
 
@@ -95,7 +95,7 @@ const Testimonial: React.FC = () => {
                     <div ref={leftGridRef} className="space-y-6">
                         {testimonials.slice(0, 3).map((testimonial, index) => (
                             <div key={index} className="bg-gray-100 p-6 rounded-lg shadow-md">
-                                <p className="text-gray-700 italic mb-4">"{testimonial.quote}"</p>
+                                <p className="text-gray-700 italic mb-4">`&quot;`{testimonial.quote}`&quot;`</p>
                                 <p className="text-gray-900 font-semibold">{testimonial.name}</p>
                                 {testimonial.title && <p className="text-gray-500 text-sm">{testimonial.title}</p>}
                             </div>
