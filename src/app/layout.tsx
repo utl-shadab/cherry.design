@@ -5,6 +5,7 @@ import "../styles/globals.css";
 // import CustomCursor from "@/components/CustomCursor";
 import SmoothScroll from "@/components/SmoothScrolling";
 import GSAPProvider from "@/components/GSAPProvider";
+import SmoothScrolling from "@/components/SmoothScrolling";
 
 const poppins = Poppins({
   subsets: ["latin"],
@@ -16,12 +17,12 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
   return (
     <html lang="en">
       <body className={`${poppins.className} cursor-none`}>
-       <SmoothScroll>
-       <GSAPProvider>
-        <div className="w-full">{children}
-        </div>
-        </GSAPProvider>
-        </SmoothScroll>
+        <SmoothScrolling>
+          <GSAPProvider>
+            <div className="w-full">{children}
+            </div>
+          </GSAPProvider>
+        </SmoothScrolling>
       </body>
     </html>
   );

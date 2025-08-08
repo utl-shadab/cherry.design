@@ -145,6 +145,8 @@ const HeroSection = () => {
           <Image
             ref={imageRef}
             src="/service.png"
+            width={400}
+            height={400}
             alt="Spinning Image"
             className="w-64 h-64 sm:w-80 sm:h-80 lg:w-96 lg:h-96 object-cover rounded-full"
           />

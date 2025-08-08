@@ -11,6 +11,7 @@ import ContactSection from "@/components/ContactSection";
 import WorkDetailsWithScrollZoom from "@/components/WorkDetailsWithScrollZoom";
 import Services from "@/components/Services";
 import WorkShowcase from "@/components/WorkShowcase";
+import SmoothScrolling from "@/components/SmoothScrolling";
 export const metadata: Metadata = {
   title: "Cherry.design - Home",
   description: "Welcome to Cherry.design - We design. We develop.",
@@ -19,6 +20,7 @@ export const metadata: Metadata = {
 export default function Home() {
   return (
     <div className="font-poppins ">
+      <SmoothScrolling>
       <Navbar />
       <Hero />
      <WorkShowcase />
@@ -30,6 +32,7 @@ export default function Home() {
       <WorkDetailsWithScrollZoom />
       <ConsultationSection />
       <ContactSection />
+      </SmoothScrolling>
     </div>
   );
 }

@@ -71,6 +71,8 @@ const Culture: React.FC = () => {
               <div className="w-full h-full rounded-2xl transform-gpu overflow-hidden absolute top-0 left-0 bg-gray-50 dark:bg-gray-700 lg:rounded-3xl">
                 <Image 
                   src="/culture.webp" 
+                  width={800}
+                  height={600}
                   alt="Team discussing work in an office with plants"
                   className="w-full h-full object-cover absolute top-0 left-0"
                 />
@@ -135,6 +137,8 @@ const Culture: React.FC = () => {
                           <div className="relative overflow-hidden w-full h-full">
                             <Image 
                               src="/culture.webp" 
+                              width={800}
+                              height={600}
                               alt="Andy Golpys profile"
                               className="w-full h-full object-cover object-center absolute top-0 left-0"
                             />
@@ -216,6 +220,7 @@ const Culture: React.FC = () => {
           </motion.div>
         </div>
       </div>
+     
     </motion.div>
   );
 };

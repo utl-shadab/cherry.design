@@ -56,6 +56,8 @@ const ClientsSection = () => {
               <div key={index} className="client-logo flex items-center justify-center">
                 <Image
                   src={logo.src}
+                 width={400}
+                  height={400}
                   alt={logo.name}
                   className="h-12 opacity-70 hover:opacity-100 transition"
                 />

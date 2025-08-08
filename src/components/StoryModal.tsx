@@ -244,6 +244,8 @@ const StoryModal: React.FC<StoryModalProps> = ({ isOpen, onClose }) => {
           <Image
             ref={storyImageRef}
             src={stories[currentStoryIndex].image}
+            fill
+            priority
             alt={stories[currentStoryIndex].title}
             className="w-full h-full object-cover rounded-lg"
           />

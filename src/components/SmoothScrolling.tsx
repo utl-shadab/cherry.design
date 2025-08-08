@@ -1,32 +1,14 @@
-"use client";
+"use client"
+import { ReactLenis } from 'lenis/react'
 
-import React, { useEffect, useRef } from "react";
-import LocomotiveScroll from "locomotive-scroll";
-import "locomotive-scroll/dist/locomotive-scroll.min.css";
-
-const SmoothScrolling = ({ children }: { children: React.ReactNode }) => {
-  const scrollRef = useRef<HTMLDivElement>(null);
-
-  useEffect(() => {
-    if (!scrollRef.current) return;
-
-    const scroll = new LocomotiveScroll({
-      el: scrollRef.current,
-      smooth: true,
-      lerp: 0.07, // Smoothness
-    });
-    console.log("Locomotive Scroll initialized ✅");
-    return () => {
-      scroll.destroy();
-      console.log("Locomotive Scroll destroyed 🧹");
-    };
-  }, []);
+function SmoothScrolling({ children }: React.PropsWithChildren<{}>) {
+  console.log("SmoothScrolling component rendered");
 
   return (
-    <div data-scroll-container ref={scrollRef}>
+    <ReactLenis root options={{ lerp: 0.05, smoothWheel: true, gestureOrientation: 'vertical' }}>
       {children}
-    </div>
-  );
-};
 
-export default SmoothScrolling;
+    </ReactLenis>
+  )
+}
+export default SmoothScrolling
